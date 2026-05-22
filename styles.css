@@ -583,3 +583,110 @@ body {
     gap: 1.25rem;
   }
 }
+
+/* ---- About page: Help Center (FAQ) ---- */
+.help-center {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 40rem;
+}
+
+.help-center .help-lead {
+  margin: 0 0 1rem;
+  color: #24292f;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.faq-item {
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  background: #ffffff;
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq-item + .faq-item {
+  margin-top: 0;
+}
+
+.faq-item > summary {
+  cursor: pointer;
+  padding: 0.75rem 0.9rem;
+  font-weight: 600;
+  color: #1f2328;
+  line-height: 1.5;
+  list-style-position: inside;
+}
+
+.faq-item > summary:hover {
+  background: #f6f8fa;
+}
+
+.faq-item > summary:focus {
+  outline: 2px solid #0969da;
+  outline-offset: -2px;
+}
+
+.faq-item[open] > summary {
+  border-bottom: 1px solid #e3e3e3;
+  background: #f6f8fa;
+}
+
+.faq-answer {
+  padding: 0.75rem 0.9rem 0.25rem;
+  color: #24292f;
+}
+
+.faq-answer p {
+  margin: 0 0 0.6rem;
+  line-height: 1.6;
+}
+
+.faq-answer a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.faq-answer a:hover,
+.faq-answer a:focus {
+  text-decoration: underline;
+}
+
+.faq-answer code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: #eef0f2;
+  padding: 0.05em 0.35em;
+  border-radius: 4px;
+}
+
+.help-footer-cta {
+  margin: 1rem 0 0;
+  color: #24292f;
+}
+
+.help-footer-cta a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.help-footer-cta a:hover,
+.help-footer-cta a:focus {
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .faq-item > summary {
+    padding: 0.85rem 1rem;
+  }
+
+  .faq-answer {
+    padding: 0.85rem 1rem 0.35rem;
+  }
+}
