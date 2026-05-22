@@ -248,3 +248,58 @@ body {
     align-items: center;
   }
 }
+
+/* ---- Site nav spacing (multiple links) ---- */
+.site-nav a + a {
+  margin-left: 1rem;
+}
+
+/* ---- About page ---- */
+.about-page h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.about-page p {
+  margin: 0 0 1rem;
+  color: #24292f;
+}
+
+.about-section {
+  margin-top: 1.75rem;
+}
+
+.about-section h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: #1f2328;
+}
+
+.about-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-links li + li {
+  margin-top: 0.25rem;
+}
+
+.about-links a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.about-links a:hover,
+.about-links a:focus {
+  text-decoration: underline;
+}
+
+@media (min-width: 640px) {
+  .about-page h1 {
+    font-size: 2.25rem;
+  }
+}
