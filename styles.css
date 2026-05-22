@@ -827,3 +827,57 @@ body {
 .news-tag[id^="tag-"] {
   scroll-margin-top: 1rem;
 }
+
+/* ---- Hero image (home page) ----
+   Decorative image at the top of the hero section. Sized to fit the hero
+   container and crop to a friendly aspect via object-fit. Border-radius and
+   spacing match the rest of the site (8px corners, modest gutter). */
+.hero-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: clamp(220px, 38vh, 420px);
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+}
+
+/* ---- Site-wide background ----
+   A faint version of the background photo sits behind every page. A near-
+   opaque white overlay (alpha 0.86) is layered on top via linear-gradient so
+   that body text in #1f2328 stays comfortably above WCAG AA 4.5:1 contrast
+   (effective surface ≈ #f5f5f5–#ffffff depending on the underlying photo).
+   The image is fixed by default for a parallax-like feel, and the no-repeat
+   keeps it from tiling on tall pages. */
+body {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.86)),
+    url('assets/background.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* ---- Mobile responsiveness ----
+   At narrow widths, crop the hero image more aggressively (shorter cap) and
+   switch background-attachment to scroll. iOS Safari in particular has long-
+   standing jank with fixed backgrounds on touch devices, and a scroll
+   background avoids that. */
+@media (max-width: 719px) {
+  .hero-image {
+    max-height: clamp(160px, 32vh, 260px);
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+}
+
+/* Honor touch / coarse-pointer devices regardless of width, since the fixed-
+   background jank is a pointer/hardware issue, not strictly a viewport one. */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    background-attachment: scroll;
+  }
+}
