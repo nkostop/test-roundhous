@@ -303,3 +303,283 @@ body {
     font-size: 2.25rem;
   }
 }
+
+/* ---- Current-page nav indicator ---- */
+.site-nav a.is-current,
+.site-nav a[aria-current="page"] {
+  color: #1f2328;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+/* ---- Landing page: hero ---- */
+.hero {
+  margin: 0 0 2.5rem;
+  padding: 0.5rem 0 1.5rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.hero .hero-subhead {
+  margin: 0 0 1.25rem;
+  color: #57606a;
+  font-size: 1.1rem;
+  max-width: 38rem;
+}
+
+.hero .hero-ctas {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.hero .btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  line-height: 1.2;
+}
+
+.hero .btn-primary {
+  background: #0969da;
+  color: #ffffff;
+  border-color: #0969da;
+}
+
+.hero .btn-primary:hover,
+.hero .btn-primary:focus {
+  background: #0860c2;
+  border-color: #0860c2;
+  text-decoration: none;
+}
+
+.hero .btn-secondary {
+  background: transparent;
+  color: #0969da;
+  border-color: #d0d7de;
+}
+
+.hero .btn-secondary:hover,
+.hero .btn-secondary:focus {
+  border-color: #0969da;
+  text-decoration: none;
+}
+
+/* ---- Landing page: highlight cards ---- */
+.landing-highlights {
+  margin: 0 0 1rem;
+}
+
+.landing-highlights h2 {
+  margin: 0 0 1rem;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.card-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid #e3e3e3;
+  border-radius: 8px;
+  padding: 1.1rem 1.1rem 1rem;
+  background: #ffffff;
+}
+
+.card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  color: #1f2328;
+}
+
+.card p {
+  margin: 0 0 0.6rem;
+  color: #24292f;
+  font-size: 0.95rem;
+}
+
+.card-link {
+  color: #0969da;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.card-link:hover,
+.card-link:focus {
+  text-decoration: underline;
+}
+
+/* ---- Posts page heading ---- */
+.page-title {
+  margin: 0 0 1.25rem;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Contact page ---- */
+.contact-page h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.contact-page > p {
+  margin: 0 0 1.25rem;
+  color: #24292f;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 0 1.5rem;
+}
+
+.contact-form .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  color: #1f2328;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #ffffff;
+  line-height: 1.4;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #0969da;
+  outline-offset: 1px;
+  border-color: #0969da;
+}
+
+.contact-form .form-actions {
+  margin-top: 0.25rem;
+}
+
+.contact-form button {
+  font: inherit;
+  padding: 0.6rem 1.1rem;
+  border-radius: 6px;
+  border: 1px solid #0969da;
+  background: #0969da;
+  color: #ffffff;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background: #0860c2;
+  border-color: #0860c2;
+}
+
+.contact-form .form-note {
+  margin: 0.25rem 0 0;
+  font-size: 0.85rem;
+  color: #57606a;
+}
+
+.channels {
+  margin-top: 2rem;
+}
+
+.channels h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  color: #1f2328;
+}
+
+.channels ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.channels li + li {
+  margin-top: 0.25rem;
+}
+
+.channels a {
+  color: #0969da;
+  text-decoration: none;
+}
+
+.channels a:hover,
+.channels a:focus {
+  text-decoration: underline;
+}
+
+/* ---- Landing/contact: wider screens ---- */
+@media (min-width: 640px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero .hero-ctas {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero .btn {
+    display: inline-block;
+  }
+
+  .contact-page h1 {
+    font-size: 2.25rem;
+  }
+
+  .page-title {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 720px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}

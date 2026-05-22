@@ -14,7 +14,9 @@
       <p class="tagline">Notes on software, by Nikos Kostopoulos</p>
       <nav class="site-nav" aria-label="Primary">
         <a href="../index.html">Home</a>
+        <a class="is-current" href="../posts.html" aria-current="page">Posts</a>
         <a href="../about.html">About</a>
+        <a href="../communication.html">Contact</a>
       </nav>
     </header>
 
@@ -58,13 +60,38 @@
           much harder to go the other way.
         </p>
 
-        <a class="back-link" href="../index.html">← Back to home</a>
+        <a class="back-link" href="../posts.html">← Back to posts</a>
       </article>
     </main>
 
     <footer class="site-footer">
-      <p>Get in touch: <a href="mailto:nikos@papergo.io">nikos@papergo.io</a></p>
-      <p class="copyright">© 2026 Nikos Kostopoulos</p>
+      <div class="footer-columns">
+        <section class="footer-col footer-about">
+          <h3>About</h3>
+          <p>Nikos's Notebook is a small place for notes on software, written by Nikos Kostopoulos.</p>
+        </section>
+
+        <nav class="footer-col footer-links" aria-label="Footer">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../posts.html">Posts</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../communication.html">Contact</a></li>
+            <li><a href="../feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer-col footer-contact">
+          <h3>Contact</h3>
+          <a href="mailto:nikos@papergo.io">nikos@papergo.io</a>
+        </address>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 Nikos Kostopoulos</p>
+        <p class="footer-built">Built with plain HTML &amp; CSS</p>
+      </div>
     </footer>
   </div>
 </body>
