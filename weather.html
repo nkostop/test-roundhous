@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather — Nikos's Notebook</title>
+  <meta name="description" content="A static sample weather panel for Athens, Greece.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <h1 class="site-title"><a href="index.html">Nikos's Notebook</a></h1>
+      <p class="tagline">Notes on software, by Nikos Kostopoulos</p>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="posts.html">Posts</a>
+        <a href="news.html">News</a>
+        <a class="is-current" href="weather.html" aria-current="page">Weather</a>
+        <a href="about.html">About</a>
+        <a href="communication.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="weather-page">
+        <h1>Weather</h1>
+        <p class="weather-lead">
+          A snapshot of today's weather in Athens, Greece. Static sample data — a live version would pull from a weather API.
+        </p>
+
+        <section class="weather-now" aria-label="Current conditions">
+          <div class="weather-now-head">
+            <p class="weather-location">Athens, GR</p>
+            <time class="weather-date" datetime="2026-05-23">May 23, 2026</time>
+          </div>
+          <p class="weather-temp">22°C</p>
+          <p class="weather-condition">Partly cloudy</p>
+          <dl class="weather-details">
+            <div class="weather-detail">
+              <dt>Feels like</dt>
+              <dd>21°C</dd>
+            </div>
+            <div class="weather-detail">
+              <dt>Humidity</dt>
+              <dd>58%</dd>
+            </div>
+            <div class="weather-detail">
+              <dt>Wind</dt>
+              <dd>12 km/h NE</dd>
+            </div>
+            <div class="weather-detail">
+              <dt>Pressure</dt>
+              <dd>1014 hPa</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="weather-forecast" aria-label="5-day forecast">
+          <h2>Next 5 days</h2>
+          <ul class="weather-forecast-list">
+            <li class="weather-day">
+              <p class="weather-day-name">Mon</p>
+              <p class="weather-day-icon" aria-hidden="true">☀️</p>
+              <p class="weather-day-temps"><span class="weather-day-high">24°</span> / <span class="weather-day-low">17°</span></p>
+              <p class="weather-day-cond">Sunny</p>
+            </li>
+            <li class="weather-day">
+              <p class="weather-day-name">Tue</p>
+              <p class="weather-day-icon" aria-hidden="true">⛅</p>
+              <p class="weather-day-temps"><span class="weather-day-high">23°</span> / <span class="weather-day-low">16°</span></p>
+              <p class="weather-day-cond">Cloudy</p>
+            </li>
+            <li class="weather-day">
+              <p class="weather-day-name">Wed</p>
+              <p class="weather-day-icon" aria-hidden="true">🌦️</p>
+              <p class="weather-day-temps"><span class="weather-day-high">21°</span> / <span class="weather-day-low">15°</span></p>
+              <p class="weather-day-cond">Showers</p>
+            </li>
+            <li class="weather-day">
+              <p class="weather-day-name">Thu</p>
+              <p class="weather-day-icon" aria-hidden="true">🌤️</p>
+              <p class="weather-day-temps"><span class="weather-day-high">22°</span> / <span class="weather-day-low">15°</span></p>
+              <p class="weather-day-cond">Partly cloudy</p>
+            </li>
+            <li class="weather-day">
+              <p class="weather-day-name">Fri</p>
+              <p class="weather-day-icon" aria-hidden="true">🌧️</p>
+              <p class="weather-day-temps"><span class="weather-day-high">20°</span> / <span class="weather-day-low">14°</span></p>
+              <p class="weather-day-cond">Rain</p>
+            </li>
+          </ul>
+        </section>
+
+        <p class="weather-attribution">Sample data — not a live forecast.</p>
+
+        <a class="back-link" href="index.html">← Back to home</a>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-columns">
+        <section class="footer-col footer-about">
+          <h3>About</h3>
+          <p>Nikos's Notebook is a small place for notes on software, written by Nikos Kostopoulos.</p>
+        </section>
+
+        <nav class="footer-col footer-links" aria-label="Footer">
+          <h3>Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="posts.html">Posts</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="communication.html">Contact</a></li>
+            <li><a href="feed.xml">RSS</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer-col footer-contact">
+          <h3>Contact</h3>
+          <a href="mailto:nikos@papergo.io">nikos@papergo.io</a>
+        </address>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 Nikos Kostopoulos</p>
+        <p class="footer-built">Built with plain HTML &amp; CSS</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
