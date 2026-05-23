@@ -1102,3 +1102,30 @@ body {
     text-align: center;
   }
 }
+
+/* ---- About image (about page) ----
+   Decorative still-life that leads the about page, sitting above the H1.
+   Sized to the reading width (720px) so it visually aligns with the article
+   body below, and capped in height so it does not dominate above the H1.
+   Border-radius (8px) and spacing mirror the home page .hero-image. */
+.about-image {
+  display: block;
+  width: 100%;
+  max-width: 720px;
+  max-height: clamp(180px, 32vh, 360px);
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+}
+
+/* ---- Mobile responsiveness for the about image ----
+   At narrow widths, crop more aggressively (shorter cap) and let the image
+   go full-bleed within its container so it never pushes the H1 below the
+   fold on small screens. */
+@media (max-width: 719px) {
+  .about-image {
+    max-width: 100%;
+    max-height: clamp(140px, 26vh, 240px);
+    margin-bottom: 1rem;
+  }
+}
