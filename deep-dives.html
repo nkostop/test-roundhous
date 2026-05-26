@@ -3,9 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Posts — Nikos's Notebook</title>
-  <meta name="description" content="Recent posts from Nikos's Notebook.">
+  <title>Deep Dives — Nikos's Notebook</title>
+  <meta name="description" content="Long-form technical deep dives from Nikos's Notebook — how things actually work, in depth.">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Deep-dives-specific styles. Kept inline so styles.css stays untouched. */
+    .page-intro {
+      margin: -0.5rem 0 1.5rem;
+      color: #57606a;
+      max-width: 56ch;
+    }
+    .deep-dive-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #6f42c1;
+      border: 1px solid #d8c7ee;
+      background: #f6f0fc;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      margin-bottom: 0.4rem;
+    }
+  </style>
 </head>
 <body>
   <div class="page">
@@ -14,8 +34,8 @@
       <p class="tagline">Notes on software, by Nikos Kostopoulos</p>
       <nav class="site-nav" aria-label="Primary">
         <a href="index.html">Home</a>
-        <a class="is-current" href="posts.html" aria-current="page">Posts</a>
-        <a href="deep-dives.html">Deep Dives</a>
+        <a href="posts.html">Posts</a>
+        <a class="is-current" href="deep-dives.html" aria-current="page">Deep Dives</a>
         <a href="news.html">News</a>
         <a href="weather.html">Weather</a>
         <a href="about.html">About</a>
@@ -24,39 +44,27 @@
     </header>
 
     <main>
-      <h1 class="page-title">Recent posts</h1>
+      <h1 class="page-title">Deep dives</h1>
+      <p class="page-intro">
+        Longer, more technical pieces that take their time. Each one tries to
+        explain how something actually works, in enough detail that you walk
+        away with a working mental model.
+      </p>
+
       <ul class="post-list">
         <li>
           <article class="post-summary">
-            <h2><a href="posts/third-post.html">On small tools and sharp edges</a></h2>
-            <time class="post-meta" datetime="2026-05-15">May 15, 2026</time>
+            <span class="deep-dive-tag">Deep Dive</span>
+            <h2><a href="posts/deep-dive-event-loop.html">How the JavaScript event loop actually schedules your code</a></h2>
+            <time class="post-meta" datetime="2026-05-22">May 22, 2026</time>
             <p class="post-excerpt">
-              The best tools I reach for every day are tiny, opinionated, and occasionally
-              cut me. I think that's a feature, not a bug.
+              "JavaScript is single-threaded" stops being useful the moment you write
+              a real program. A walk through the call stack, the task and microtask
+              queues, and the render step — the small ordering rules that explain
+              why <code>setTimeout(fn, 0)</code> can run after a promise that
+              resolves later in source order.
             </p>
-            <a class="read-more" href="posts/third-post.html">Read more →</a>
-          </article>
-        </li>
-        <li>
-          <article class="post-summary">
-            <h2><a href="posts/second-post.html">Notes on writing more, editing less</a></h2>
-            <time class="post-meta" datetime="2026-04-28">April 28, 2026</time>
-            <p class="post-excerpt">
-              I keep trying to publish polished essays and ending up with nothing. This
-              month I tried the opposite — and it worked better than I expected.
-            </p>
-            <a class="read-more" href="posts/second-post.html">Read more →</a>
-          </article>
-        </li>
-        <li>
-          <article class="post-summary">
-            <h2><a href="posts/hello-world.html">Hello, world</a></h2>
-            <time class="post-meta" datetime="2026-04-12">April 12, 2026</time>
-            <p class="post-excerpt">
-              A first post, mostly to prove the pipes are connected. Why I'm starting a
-              notebook in public, and what I hope to put in it.
-            </p>
-            <a class="read-more" href="posts/hello-world.html">Read more →</a>
+            <a class="read-more" href="posts/deep-dive-event-loop.html">Read more →</a>
           </article>
         </li>
       </ul>
