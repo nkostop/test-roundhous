@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A small, simple demo blog.">
+    <meta name="color-scheme" content="light dark">
+    <title>My Blog — Notes and Essays</title>
+    <style>
+      :root {
+        --color-bg:      #ffffff;
+        --color-fg:      #1f2328;
+        --color-muted:   #57606a;
+        --color-accent:  #0969da;
+        --color-border:  #d0d7de;
+        --color-surface: #f6f8fa;
+
+        --space-1: 0.25rem;
+        --space-2: 0.5rem;
+        --space-3: 1rem;
+        --space-4: 1.5rem;
+        --space-5: 2rem;
+        --space-6: 3rem;
+
+        --content-max: 1100px;
+        --sidebar-w:   260px;
+        --radius:      6px;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --color-bg:      #0d1117;
+          --color-fg:      #e6edf3;
+          --color-muted:   #8b949e;
+          --color-accent:  #58a6ff;
+          --color-border:  #30363d;
+          --color-surface: #161b22;
+        }
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html { font-size: 100%; }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--color-fg);
+        background: var(--color-bg);
+      }
+
+      h1, h2, h3 {
+        line-height: 1.25;
+        margin: 0 0 var(--space-3);
+      }
+
+      p { margin: 0 0 var(--space-3); }
+
+      a {
+        color: var(--color-accent);
+        text-decoration: none;
+      }
+      a:hover { text-decoration: underline; }
+      a:focus-visible {
+        outline: 2px solid var(--color-accent);
+        outline-offset: 2px;
+        border-radius: var(--radius);
+      }
+
+      .site-header {
+        border-bottom: 1px solid var(--color-border);
+        background: var(--color-surface);
+      }
+
+      .site-header__row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-3);
+        max-width: var(--content-max);
+        margin-inline: auto;
+        padding: var(--space-4) var(--space-4);
+      }
+
+      .site-brand { min-width: 0; }
+
+      .site-title {
+        font-size: 1.5rem;
+        margin: 0;
+        color: var(--color-fg);
+      }
+
+      .site-tagline {
+        margin: var(--space-1) 0 0;
+        color: var(--color-muted);
+        font-size: 0.95rem;
+      }
+
+      .site-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+      }
+
+      .site-nav a {
+        display: inline-block;
+        padding: var(--space-1) var(--space-2);
+        color: var(--color-fg);
+        font-weight: 500;
+      }
+      .site-nav a:hover { color: var(--color-accent); }
+
+      .page {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+        max-width: var(--content-max);
+        margin-inline: auto;
+        padding: var(--space-5) var(--space-4);
+      }
+
+      .posts { min-width: 0; }
+
+      .post {
+        padding: 0 0 var(--space-5);
+        border-bottom: 1px solid var(--color-border);
+        margin-bottom: var(--space-5);
+      }
+      .post:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .post__header { margin-bottom: var(--space-3); }
+
+      .post__title {
+        font-size: 1.5rem;
+        margin: 0 0 var(--space-1);
+      }
+
+      .post__meta {
+        color: var(--color-muted);
+        font-size: 0.9rem;
+        margin: 0;
+      }
+
+      .post__more {
+        font-weight: 500;
+      }
+
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        min-width: 0;
+      }
+
+      .widget {
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius);
+        padding: var(--space-4);
+      }
+
+      .widget__title {
+        font-size: 1.1rem;
+        margin: 0 0 var(--space-3);
+        color: var(--color-fg);
+      }
+
+      .widget p { margin: 0; color: var(--color-fg); }
+
+      .widget ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .widget li {
+        padding: var(--space-1) 0;
+        border-bottom: 1px dashed var(--color-border);
+      }
+      .widget li:last-child { border-bottom: 0; }
+
+      .widget a {
+        display: block;
+        padding: var(--space-1) 0;
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--color-border);
+        background: var(--color-surface);
+        color: var(--color-muted);
+        text-align: center;
+        padding: var(--space-4) var(--space-3);
+      }
+
+      .site-footer p { margin: 0; }
+
+      @media (min-width: 768px) {
+        .page {
+          grid-template-columns: minmax(0, 1fr) var(--sidebar-w);
+        }
+        .site-title { font-size: 1.75rem; }
+        .post__title { font-size: 1.75rem; }
+      }
+
+      @media print {
+        .site-nav,
+        .sidebar,
+        .site-footer { display: none; }
+        body {
+          color: #000;
+          background: #fff;
+        }
+        .site-header,
+        .widget,
+        .site-footer { background: transparent; }
+        .page {
+          display: block;
+          max-width: none;
+          padding: 0;
+        }
+        a { color: #000; text-decoration: underline; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__row">
+        <div class="site-brand">
+          <h1 class="site-title">My Blog</h1>
+          <p class="site-tagline">Notes and essays on nothing in particular.</p>
+        </div>
+        <nav aria-label="Primary" class="site-nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="page">
+      <main class="posts" aria-label="Blog posts">
+        <article class="post">
+          <header class="post__header">
+            <h2 class="post__title">Hello, world (again)</h2>
+            <p class="post__meta">By Ada Lovelace · March 3, 2026</p>
+          </header>
+          <p>Starting a new blog always feels a little like clearing off a workbench that has been quietly gathering dust. The tools are still where you left them, but the light coming through the window is different, and so are you. The trick, I have found, is to write the first post before you talk yourself out of it.</p>
+          <p>This site is deliberately small. There are no analytics, no comment threads, no clever build pipelines waiting to break during a deploy. Just words on a page and enough CSS to make them pleasant to read on whatever device happens to be closest at hand.</p>
+          <p>If you are reading this, thank you for stopping by. I plan to write about the small, unglamorous parts of making things — the parts that rarely make it into conference talks but seem to matter most in practice.</p>
+          <p><a class="post__more" href="#" aria-label="Read more about Hello, world (again)">Read more →</a></p>
+        </article>
+
+        <article class="post">
+          <header class="post__header">
+            <h2 class="post__title">On small websites</h2>
+            <p class="post__meta">By Grace Hopper · April 12, 2026</p>
+          </header>
+          <p>There is a particular joy in a website that fits inside a single file. It loads instantly, it is trivial to back up, and it can be understood in an afternoon by anyone willing to view source. That last point may be the most important of the three.</p>
+          <p>Most of the sites I return to over the years share this quality. They do not try to be clever. They do not ask permission to send notifications. They simply put text on a page in a size I can read, and they trust me to bring my own attention to the party.</p>
+          <p>The web was designed to be modest, and I think we do our best work when we remember that. A blog does not need a framework any more than a handwritten letter needs a printing press.</p>
+          <p><a class="post__more" href="#" aria-label="Read more about On small websites">Read more →</a></p>
+        </article>
+
+        <article class="post">
+          <header class="post__header">
+            <h2 class="post__title">Notes from the workshop</h2>
+            <p class="post__meta">By Alan Turing · May 21, 2026</p>
+          </header>
+          <p>Every workshop I have ever spent time in eventually accumulates a shelf of half-finished projects. Some are abandoned because they turned out to be bad ideas; more, honestly, are abandoned because a better idea walked in the door before the first one was done. I have stopped feeling guilty about this.</p>
+          <p>What I try to keep, instead, is a habit of writing down what I learned before the project goes on the shelf. Even a page or two is enough. Future-me is a stranger with a poor memory, and small notes are the kindest thing present-me can leave behind.</p>
+          <p><a class="post__more" href="#" aria-label="Read more about Notes from the workshop">Read more →</a></p>
+        </article>
+      </main>
+
+      <aside class="sidebar" aria-label="Sidebar">
+        <section class="widget" aria-labelledby="about-heading">
+          <h2 id="about-heading" class="widget__title">About</h2>
+          <p>A small, quiet blog about writing, design, and the craft of building unremarkable things carefully. Updated whenever there is something worth saying.</p>
+        </section>
+
+        <section class="widget" aria-labelledby="recent-heading">
+          <h2 id="recent-heading" class="widget__title">Recent Posts</h2>
+          <ul>
+            <li><a href="#">Hello, world (again)</a></li>
+            <li><a href="#">On small websites</a></li>
+            <li><a href="#">Notes from the workshop</a></li>
+            <li><a href="#">A shorter kind of essay</a></li>
+          </ul>
+        </section>
+
+        <section class="widget" aria-labelledby="categories-heading">
+          <h2 id="categories-heading" class="widget__title">Categories</h2>
+          <ul>
+            <li><a href="#">Writing</a></li>
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Code</a></li>
+            <li><a href="#">Notes</a></li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 My Blog. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
